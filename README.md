@@ -10,20 +10,20 @@ Format is `<time starts HH:MM>,<time stops HH:MM>`.
 First you have to download it into your opewrt box.  You can just copy and
 paste the content from here or use `curl` instead (if installed):
 
-  `root@OpenWrt:~# which curl
-  /usr/bin/curl
-  root@OpenWrt:~# cd /usr/lib/scripts/
-  root@OpenWrt:/usr/lib/scripts# curl -LO https://raw.githubusercontent.com/helioloureiro/opewrt-youtube-blocker/main/firewall.sh
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                               Dload  Upload   Total   Spent    Left  Speed
-  100  3924  100  3924    0     0   4605      0 --:--:-- --:--:-- --:--:--  4850
-  root@OpenWrt:/usr/lib/scripts# chmod +x firewall.sh
-  `
+    root@OpenWrt:~# which curl
+    /usr/bin/curl
+    root@OpenWrt:~# cd /usr/lib/scripts/
+    root@OpenWrt:/usr/lib/scripts# curl -LO https://raw.githubusercontent.com/helioloureiro/opewrt-youtube-blocker/main/firewall.sh
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+    100  3924  100  3924    0     0   4605      0 --:--:-- --:--:-- --:--:--  4850
+    root@OpenWrt:/usr/lib/scripts# chmod +x firewall.sh
+
 
 You can manually start and stop the firewall also.  But if you set to run by
 crontab, it state will be ovewritten.
 
-    `root@OpenWrt:/usr/lib/scripts# ./firewall.sh
+    root@OpenWrt:/usr/lib/scripts# ./firewall.sh
     Use: ./firewall.sh [start|stop|timetable|status]
     root@OpenWrt:/usr/lib/scripts# ./firewall.sh status
     firewall rules are disabled
@@ -97,7 +97,6 @@ crontab, it state will be ovewritten.
     iptables -I OUTPUT 22 -p udp --dport 443 -j DROP
     root@OpenWrt:/usr/lib/scripts# ./firewall.sh status
     firewall rules are enabled
-    `
 
 In order to run based on time, just get into your openwrt box web interface,
 get into system -> crontab and add the following entry:
