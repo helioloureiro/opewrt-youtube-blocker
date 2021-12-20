@@ -99,6 +99,6 @@ crontab, it state will be ovewritten.
     firewall rules are enabled
 
 In order to run based on time, just get into your openwrt box web interface,
-get into system -> crontab and add the following entry:
+go into system -> crontab and add the following entry:
 
   `*/5 * * * * /usr/lib/scripts/firewall.sh timetable`
